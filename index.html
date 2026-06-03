@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuprum Studios - Game Dev Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a12;--surface:#0f0f1e;--card-bg:#12122a;
+  --blue:#1a3a8f;--blue-mid:#2050bf;--blue-lite:#4a80ef;
+  --pink:#e040fb;--pink-dim:#9b27b0;
+  --orange:#e89040;--orange-dim:#a05020;
+  --green:#40d080;--green-dim:#207040;
+  --text:#d8dff8;--muted:#7080b0;--border:#1e2a5a;
+  --pixel:'Press Start 2P',monospace;--mono:'Share Tech Mono',monospace;
+  --glow-pink:0 0 12px #e040fb88,0 0 30px #e040fb44;
+  --glow-blue:0 0 12px #4a80ef88,0 0 30px #4a80ef33;
+  --glow-orange:0 0 8px #e8904088;
+  --glow-green:0 0 10px #40d08088;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:15px;line-height:1.7;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(to bottom,transparent 0px,transparent 3px,rgba(0,0,0,0.15) 3px,rgba(0,0,0,0.15) 4px);pointer-events:none;z-index:9999}
+
+/* ASCII BANNER */
+#ascii-banner{background:var(--surface);border-bottom:1px solid var(--border);padding:1.75rem 0 1.25rem;text-align:center;overflow:hidden}
+#ascii-art{font-family:var(--mono);font-size:clamp(0.4rem,1.05vw,0.65rem);line-height:1.18;color:var(--blue-lite);text-shadow:var(--glow-blue);white-space:pre;display:inline-block;animation:fadeIn 0.8s ease both;letter-spacing:0.02em}
+.ap{color:var(--pink);text-shadow:var(--glow-pink)}
+
+/* SCANBAR */
+.scanbar{width:100%;height:4px;background:var(--pink);box-shadow:var(--glow-pink);position:relative}
+.scanbar::before,.scanbar::after{content:'';display:block;width:100%;height:2px;background:rgba(255,255,255,0.25)}
+
+/* HEADER */
+header{background:var(--surface);padding:2.5rem 0 2rem;text-align:center;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 110%,#1a3a8f33 0%,transparent 65%);pointer-events:none}
+.logo-img{width:140px;height:auto;image-rendering:pixelated;margin:0 auto 1.25rem;display:block;filter:drop-shadow(0 0 14px #e040fb88) drop-shadow(0 0 28px #4a80ef55)}
+header h1{font-family:var(--pixel);font-size:clamp(0.65rem,2.2vw,1rem);color:var(--blue-lite);text-shadow:var(--glow-blue);letter-spacing:0.08em;margin-bottom:0.75rem;line-height:1.6}
+.tagline{font-family:var(--mono);font-size:0.88rem;color:var(--muted);letter-spacing:0.12em}
+.tagline span{color:var(--orange);text-shadow:var(--glow-orange)}
+.hire-badge{display:inline-flex;align-items:center;gap:0.5rem;margin-top:1rem;padding:0.45rem 1rem;border:1px solid var(--green-dim);font-family:var(--pixel);font-size:0.42rem;color:var(--green);letter-spacing:0.08em;text-shadow:var(--glow-green);cursor:default}
+.hire-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:var(--glow-green);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+
+/* NAV */
+nav{background:var(--card-bg);border-bottom:1px solid var(--border);padding:0.7rem 0;position:sticky;top:0;z-index:100}
+nav ul{display:flex;gap:1.5rem;list-style:none;justify-content:center;flex-wrap:wrap;max-width:960px;margin:0 auto;padding:0 2rem}
+nav a{font-family:var(--pixel);font-size:0.5rem;color:var(--muted);text-decoration:none;letter-spacing:0.1em;padding:0.4rem 0;border-bottom:2px solid transparent;transition:color 0.2s,border-color 0.2s,text-shadow 0.2s}
+nav a:hover,nav a.active{color:var(--pink);border-bottom-color:var(--pink);text-shadow:var(--glow-pink)}
+
+/* LAYOUT */
+.container{max-width:960px;margin:0 auto;padding:0 2rem}
+section{padding:3.5rem 0}
+section+section{border-top:1px solid var(--border)}
+.section-heading{font-family:var(--pixel);font-size:0.72rem;color:var(--orange);text-shadow:var(--glow-orange);letter-spacing:0.12em;margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
+.section-heading::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--orange-dim),transparent)}
+
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+@media(max-width:680px){.about-layout{grid-template-columns:1fr;gap:1.5rem}}
+#about p{color:var(--text);line-height:1.9;margin-bottom:1rem}
+#about p:last-child{margin-bottom:0}
+.learning-list{display:flex;flex-direction:column;gap:0.75rem}
+.learning-item{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--pink-dim);padding:0.75rem 1rem;display:flex;flex-direction:column;gap:0.3rem}
+.learning-item .l-title{font-family:var(--pixel);font-size:0.45rem;color:var(--pink);text-shadow:var(--glow-pink);letter-spacing:0.06em}
+.learning-item .l-desc{font-size:0.8rem;color:var(--muted)}
+.learning-item .l-bar-wrap{height:4px;background:var(--border);margin-top:0.4rem}
+.learning-item .l-bar{height:100%;background:var(--pink-dim);box-shadow:var(--glow-pink)}
+
+/* STATS */
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1rem;margin-top:2rem;width:100%}
+.stat-box{background:var(--card-bg);border:1px solid var(--border);border-top:2px solid var(--blue-mid);padding:1rem 1.25rem}
+.stat-box.pink-top{border-top-color:var(--pink-dim)}.stat-box.orange-top{border-top-color:var(--orange-dim)}.stat-box.green-top{border-top-color:var(--green-dim)}
+.stat-box .num{font-family:var(--pixel);font-size:1rem;color:var(--blue-lite);text-shadow:var(--glow-blue);display:block;margin-bottom:0.5rem;line-height:1.4}
+.stat-box.pink-top .num{color:var(--pink);text-shadow:var(--glow-pink)}.stat-box.orange-top .num{color:var(--orange);text-shadow:var(--glow-orange)}.stat-box.green-top .num{color:var(--green);text-shadow:var(--glow-green)}
+.stat-box .label{font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;line-height:1.4}
+
+/* PROJECTS */
+#projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.card{background:var(--card-bg);border:1px solid var(--border);border-top:3px solid var(--blue-mid);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color 0.25s,transform 0.2s}
+.card:hover{border-top-color:var(--pink);transform:translateY(-3px)}
+.card:hover .card-glow{opacity:1}
+.card-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,#e040fb18 0%,transparent 60%);opacity:0;transition:opacity 0.3s;pointer-events:none}
+.card-thumb{width:100%;aspect-ratio:16/9;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--pixel);font-size:0.5rem;color:var(--muted);letter-spacing:0.08em;overflow:hidden;position:relative}
+.card-thumb img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.card-thumb.placeholder::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:24px 24px;opacity:0.5}
+.card-thumb.placeholder span{position:relative;z-index:1}
+.card-body{padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:0.6rem}
+.card-title{font-family:var(--pixel);font-size:0.58rem;color:var(--text);letter-spacing:0.06em;line-height:1.5}
+.card-desc{font-size:0.82rem;color:var(--muted);line-height:1.7;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.4rem}
+.tag{font-family:var(--pixel);font-size:0.38rem;padding:0.3rem 0.5rem;border:1px solid var(--blue-mid);color:var(--blue-lite);letter-spacing:0.05em}
+.card-links{display:flex;gap:0.75rem;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid var(--border)}
+.card-links a{font-family:var(--pixel);font-size:0.42rem;color:var(--pink);text-decoration:none;text-shadow:var(--glow-pink);letter-spacing:0.06em}
+.card-links a::before{content:'> '}
+.card-links a:hover{color:#fff}
+.badge-wip{position:absolute;top:0.6rem;right:0.6rem;font-family:var(--pixel);font-size:0.35rem;padding:0.3rem 0.5rem;background:var(--orange);color:#1a0800;letter-spacing:0.06em;z-index:2}
+
+/* BLOG */
+.blog-tag-bar{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;align-items:center}
+.blog-tag-bar-label{font-family:var(--pixel);font-size:0.38rem;color:var(--muted);letter-spacing:0.08em;margin-right:0.25rem}
+.filter-tag{font-family:var(--pixel);font-size:0.38rem;padding:0.3rem 0.65rem;border:1px solid var(--border);color:var(--muted);background:var(--card-bg);cursor:pointer;letter-spacing:0.05em;transition:all 0.15s}
+.filter-tag:hover{border-color:var(--blue-mid);color:var(--blue-lite)}
+.filter-tag.active{border-color:var(--pink-dim);color:var(--pink);text-shadow:var(--glow-pink);background:#e040fb0f}
+.blog-layout{display:grid;grid-template-columns:1fr 340px;gap:2rem;align-items:start}
+@media(max-width:760px){.blog-layout{grid-template-columns:1fr}}
+#blog-list{display:flex;flex-direction:column;gap:1px}
+.blog-card{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--blue-mid);padding:1.25rem 1.5rem;cursor:pointer;transition:border-left-color 0.2s,background 0.2s}
+.blog-card:hover,.blog-card.active{border-left-color:var(--pink);background:#181835}
+.blog-card.hidden{display:none}
+.blog-card-date{font-family:var(--pixel);font-size:0.4rem;color:var(--orange);text-shadow:var(--glow-orange);letter-spacing:0.06em;margin-bottom:0.5rem}
+.blog-card-title{font-family:var(--pixel);font-size:0.55rem;color:var(--text);letter-spacing:0.05em;line-height:1.6;margin-bottom:0.4rem}
+.blog-card-excerpt{font-size:0.8rem;color:var(--muted);line-height:1.6}
+.blog-card-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.6rem}
+.blog-tag{font-family:var(--pixel);font-size:0.35rem;padding:0.25rem 0.45rem;border:1px solid var(--pink-dim);color:var(--pink);letter-spacing:0.05em}
+#blog-reader{background:var(--card-bg);border:1px solid var(--border);border-top:3px solid var(--pink-dim);padding:1.5rem;position:sticky;top:60px;max-height:calc(100vh - 80px);overflow-y:auto}
+#blog-reader-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;color:var(--muted);font-family:var(--pixel);font-size:0.42rem;letter-spacing:0.08em;text-align:center;line-height:2.5}
+#blog-reader-content{display:none}
+#blog-reader-content h3{font-family:var(--pixel);font-size:0.6rem;color:var(--text);letter-spacing:0.06em;line-height:1.6;margin-bottom:0.5rem}
+#blog-reader-content .r-meta{font-size:0.78rem;color:var(--orange);text-shadow:var(--glow-orange);margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+#blog-reader-content .r-body{font-size:0.85rem;color:var(--text);line-height:1.9}
+.r-body p{margin-bottom:1rem}
+.r-body p:last-child{margin-bottom:0}
+.r-body .yt-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:1.25rem 0;border:1px solid var(--border)}
+.r-body .yt-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+.blog-notice{background:var(--card-bg);border:1px solid var(--border);border-left:3px solid var(--orange-dim);padding:1.25rem 1.5rem;font-size:0.85rem;color:var(--muted);line-height:1.8}
+.blog-empty{padding:2rem;text-align:center;font-family:var(--pixel);font-size:0.42rem;color:var(--muted);letter-spacing:0.08em;line-height:2.5;border:1px solid var(--border);background:var(--card-bg)}
+
+/* SKILLS */
+.skills-grid{display:flex;flex-wrap:wrap;gap:0.6rem}
+.skill-tag{font-family:var(--pixel);font-size:0.42rem;padding:0.45rem 0.75rem;border:1px solid var(--border);color:var(--text);letter-spacing:0.06em;cursor:default;transition:color 0.2s,border-color 0.2s,text-shadow 0.2s;background:var(--card-bg)}
+.skill-tag:hover{color:var(--pink);border-color:var(--pink-dim);text-shadow:var(--glow-pink)}
+.skill-tag.highlight{color:var(--orange);border-color:var(--orange-dim);text-shadow:var(--glow-orange)}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;border:1px solid var(--border)}
+.contact-link{display:flex;flex-direction:column;align-items:flex-start;gap:0.5rem;background:var(--card-bg);padding:1.25rem 1.5rem;text-decoration:none;color:var(--text);transition:background 0.2s;border-right:1px solid var(--border)}
+.contact-link:last-child{border-right:none}
+.contact-link:hover{background:#181835}
+.contact-link:hover .link-label{color:var(--pink);text-shadow:var(--glow-pink)}
+.contact-link .link-label{font-family:var(--pixel);font-size:0.48rem;color:var(--muted);letter-spacing:0.08em;transition:color 0.2s,text-shadow 0.2s}
+.contact-link .link-value{font-family:var(--mono);font-size:0.88rem;color:var(--text)}
+
+/* FOOTER */
+footer{text-align:center;padding:2rem;background:var(--surface);border-top:1px solid var(--border);font-family:var(--pixel);font-size:0.4rem;color:var(--muted);letter-spacing:0.1em;line-height:2.5}
+footer .pink{color:var(--pink)}
+
+.blink{animation:blink 1s step-start infinite}
+@keyframes blink{50%{opacity:0}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+</style>
+</head>
+<body>
+
+</div>
+<!-- ASCII BANNER -->
+<div id="ascii-banner"><pre id="ascii-art"><span class="ap">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span>
+  ██████╗██╗   ██╗███████╗
+ ██╔════╝██║   ██║██╔════╝
+ ██║     ██║   ██║███████╗
+ ██║     ██║   ██║╚════██║
+ ╚██████╗╚██████╔╝███████║
+  ╚═════╝ ╚═════╝ ╚══════╝
+<span class="ap">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓</span></pre></div>
+
+<div class="scanbar"></div>
+
+<header>
+  <div class="container">
+    <img class="logo-img" src="newCuprumLogo_640x.png" alt="CuS Logo">
+    <h1>CUPRUM STUDIOS</h1>
+    <p class="tagline">GAME DEV &nbsp;/&nbsp; <span>UNITY</span> &nbsp;/&nbsp; INTERACTIVE EXPERIENCES</p>
+    <div class="hire-badge" id="hire-badge">
+      <div class="hire-dot"></div>
+      <span id="hire-text">OPEN FOR HIRE &amp; COLLAB</span>
+    </div>
+  </div>
+</header>
+
+<div class="scanbar"></div>
+
+<nav>
+  <ul>
+    <li><a href="#about" class="active">ABOUT</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#blog">BLOG</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav>
+
+<main>
+<div class="container">
+
+  <section id="about">
+    <h2 class="section-heading">// ABOUT</h2>
+    <div class="about-layout">
+      <div id="about-text"></div>
+      <div>
+        <h3 class="section-heading" style="font-size:0.58rem;margin-bottom:1rem;">// CURRENTLY LEARNING</h3>
+        <div class="learning-list" id="learning-list"></div>
+      </div>
+    </div>
+    <div class="stat-row" id="stat-row"></div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-heading">// PROJECTS</h2>
+    <div id="projects-grid"></div>
+  </section>
+
+  <section id="blog">
+    <h2 class="section-heading">// BLOG</h2>
+    <div id="blog-area"></div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-heading">// SKILLS</h2>
+    <div class="skills-grid" id="skills-grid"></div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-heading">// CONTACT</h2>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">
+      Want to collaborate, hire, or just say hi? Reach out — I don't bite.<span class="blink">_</span>
+    </p>
+    <div class="contact-grid" id="contact-grid"></div>
+  </section>
+
+</div>
+</main>
+
+<div class="scanbar"></div>
+<footer>
+  <p>CRAFTED WITH <span class="pink">&#9829;</span> BY CUPRUM STUDIOS &nbsp;&#183;&nbsp; 2025</p>
+  <p>BUILT WITH VANILLA HTML / CSS / JS &nbsp;&#183;&nbsp; HOSTED ON GITHUB PAGES</p>
+</footer>
+
+<script>
+const DEFAULTS = {
+  hire:{ status:"open", text:"OPEN FOR HIRE & COLLAB" },
+  about:"Hey! I'm a game developer focused on building fun, polished experiences in Unity.\n\nThis portfolio showcases personal projects I've built to sharpen my skills across gameplay programming, shader work, and systems design.",
+  stats:[
+    {num:"2+",label:"YRS WITH UNITY",color:"blue"},
+    {num:"5", label:"PROJECTS BUILT",color:"blue"},
+    {num:"3", label:"GAME JAMS",     color:"orange"},
+    {num:"C#",label:"PRIMARY LANG",  color:"pink"},
+    {num:"∞", label:"BUGS FIXED",    color:"blue"},
+    {num:"OPEN",label:"FOR HIRE",    color:"green"}
+  ],
+  learning:[
+    {title:"SHADER GRAPH",    desc:"Custom water surface & toon outline shaders",    pct:60},
+    {title:"NAVMESH + AGENTS",desc:"Advanced enemy pathfinding & steering",          pct:40},
+    {title:"UNITY DOTS",      desc:"Data-oriented tech stack for large simulations", pct:20}
+  ],
+  projects:[
+    {title:"2D PLATFORMER",    desc:"A tight side-scrolling platformer with coyote time, variable jump height, and hand-crafted levels.",tags:["UNITY 2D","C#","PHYSICS"],wip:true,github:"#",itch:"#"},
+    {title:"TOP-DOWN SHOOTER", desc:"Arcade-style bullet hell with wave scaling, high score system, and screen-shake juice.",tags:["UNITY 2D","C#","GAME JAM"],wip:false,github:"#",itch:"#"},
+    {title:"PROC. DUNGEON GEN",desc:"BSP tree room generation with corridors, randomised enemy placement, and a minimap.",tags:["UNITY","PROCEDURAL","ALGORITHMS"],wip:true,github:"#",itch:""}
+  ],
+  posts:[
+    {id:"coyote-time",title:"Implementing Coyote Time in Unity",date:"2025-06-01",tags:["Unity","Tips"],excerpt:"Coyote time is a tiny mechanic that makes platformers feel dramatically better.",body:"Coyote time is the grace period after a player walks off a ledge where they can still jump.\n\nThe fix is simple: track the last time the player was grounded, allow a jump within a small window (0.1–0.15s).\n\nSmall details like this are what separate a janky prototype from a polished game."},
+    {id:"first-jam",title:"What I Learned From My First Game Jam",date:"2025-05-20",tags:["Game Jam","DEVLOG"],excerpt:"48 hours, one game, a thousand mistakes.",body:"Get the core loop playable within the first 4 hours. Everything else is optional.\n\nScope ruthlessly. Playtest earlier.\n\nI shipped something — and that's what counts."}
+  ],
+  skills:[
+    {name:"UNITY",highlight:true},{name:"C#",highlight:true},
+    {name:"2D PHYSICS",highlight:false},{name:"ANIMATOR / MECANIM",highlight:false},
+    {name:"NAVMESH AI",highlight:false},{name:"SHADER GRAPH",highlight:false},
+    {name:"UNITY UI",highlight:false},{name:"SCRIPTABLE OBJECTS",highlight:false},
+    {name:"GIT",highlight:false},{name:"GAME DESIGN",highlight:false},
+    {name:"ASEPRITE",highlight:false},{name:"LEVEL DESIGN",highlight:false}
+  ],
+  contact:[
+    {label:"EMAIL",  value:"you@email.com",           href:"mailto:you@email.com"},
+    {label:"GITHUB", value:"github.com/yourusername", href:"https://github.com/yourusername"},
+    {label:"TWITTER",value:"@yourhandle",             href:"https://twitter.com/yourhandle"},
+    {label:"ITCH.IO",value:"yourname.itch.io",        href:"https://yourname.itch.io"}
+  ]
+};
+
+/* ── BODY RENDERER: paragraphs + [youtube:ID] embeds ── */
+function renderBody(raw, container) {
+  container.innerHTML = '';
+  const segments = raw.split(/\[youtube:([a-zA-Z0-9_-]+)\]/g);
+  // segments alternates: text, ytid, text, ytid, ...
+  for (let i = 0; i < segments.length; i++) {
+    if (i % 2 === 0) {
+      // plain text block — split into paragraphs
+      const text = segments[i];
+      if (!text.trim()) continue;
+      text.split(/\n\n+/).forEach(para => {
+        if (!para.trim()) return;
+        const p = document.createElement('p');
+        p.textContent = para.trim();
+        container.appendChild(p);
+      });
+    } else {
+      // youtube embed
+      const ytid = segments[i];
+      const wrap = document.createElement('div');
+      wrap.className = 'yt-wrap';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${ytid}`;
+      iframe.setAttribute('allowfullscreen','');
+      iframe.setAttribute('loading','lazy');
+      iframe.title = 'YouTube video';
+      wrap.appendChild(iframe);
+      container.appendChild(wrap);
+    }
+  }
+}
+
+/* ── RENDER FUNCTIONS ── */
+function renderHire(d) {
+  const badge = document.getElementById('hire-badge');
+  const dot   = badge.querySelector('.hire-dot');
+  document.getElementById('hire-text').textContent = d.text;
+  if (d.status==='closed') { dot.style.cssText='width:8px;height:8px;border-radius:50%;background:#e04040;box-shadow:0 0 10px #e0404088;animation:pulse 2s ease-in-out infinite'; badge.style.borderColor='#7a2020'; badge.style.color='#e04040'; badge.style.textShadow=''; }
+  else if (d.status==='busy') { dot.style.cssText='width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:var(--glow-orange);animation:pulse 2s ease-in-out infinite'; badge.style.borderColor='var(--orange-dim)'; badge.style.color='var(--orange)'; badge.style.textShadow='var(--glow-orange)'; }
+}
+
+function renderAbout(text) {
+  const el = document.getElementById('about-text');
+  el.innerHTML = text.split('\n\n').map(p=>`<p>${p}</p>`).join('');
+}
+
+function renderStats(stats) {
+  const cm={blue:'',pink:' pink-top',orange:' orange-top',green:' green-top'};
+  document.getElementById('stat-row').innerHTML = stats.map(s=>
+    `<div class="stat-box${cm[s.color]||''}"><span class="num">${s.num}</span><span class="label">${s.label}</span></div>`
+  ).join('');
+}
+
+function renderLearning(items) {
+  document.getElementById('learning-list').innerHTML = items.map(i=>
+    `<div class="learning-item">
+      <span class="l-title">${i.title}</span>
+      <span class="l-desc">${i.desc}</span>
+      <div class="l-bar-wrap"><div class="l-bar" style="width:${i.pct}%"></div></div>
+    </div>`
+  ).join('');
+}
+
+function renderProjects(projects) {
+  document.getElementById('projects-grid').innerHTML = projects.map(p=>`
+    <article class="card">
+      <div class="card-glow"></div>
+      ${p.wip?'<div class="badge-wip">WIP</div>':''}
+      <div class="card-thumb placeholder"><span>[ SCREENSHOT ]</span></div>
+      <div class="card-body">
+        <h3 class="card-title">${p.title}</h3>
+        <p class="card-desc">${p.desc}</p>
+        <div class="card-tags">${(p.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="card-links">
+          ${p.github?`<a href="${p.github}" target="_blank" rel="noopener">GITHUB</a>`:''}
+          ${p.itch  ?`<a href="${p.itch}"   target="_blank" rel="noopener">ITCH.IO</a>`:''}
+        </div>
+      </div>
+    </article>`).join('');
+}
+
+/* ── BLOG with tag filter ── */
+let allPosts = [];
+let activeTag = null;
+
+function renderBlog(posts) {
+  allPosts = posts || [];
+  const area = document.getElementById('blog-area');
+  if (allPosts.length === 0) {
+    area.innerHTML = '<div class="blog-notice">No posts yet. Use the admin panel to write your first post!</div>';
+    return;
+  }
+
+  // collect all unique tags
+  const tagSet = new Set();
+  allPosts.forEach(p => (p.tags||[]).forEach(t => tagSet.add(t)));
+  const tags = [...tagSet].sort();
+
+  area.innerHTML = `
+    <div class="blog-tag-bar">
+      <span class="blog-tag-bar-label">FILTER:</span>
+      <button class="filter-tag active" data-tag="__all">ALL</button>
+      ${tags.map(t=>`<button class="filter-tag" data-tag="${t}">${t}</button>`).join('')}
+    </div>
+    <div class="blog-layout">
+      <div id="blog-list"></div>
+      <div id="blog-reader">
+        <div id="blog-reader-placeholder">SELECT A POST<br>TO READ IT HERE<span class="blink">_</span></div>
+        <div id="blog-reader-content">
+          <h3 id="r-title"></h3>
+          <div class="r-meta" id="r-meta"></div>
+          <div class="r-body" id="r-body"></div>
+        </div>
+      </div>
+    </div>`;
+
+  // tag filter buttons
+  area.querySelectorAll('.filter-tag').forEach(btn => {
+    btn.addEventListener('click', () => {
+      area.querySelectorAll('.filter-tag').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTag = btn.dataset.tag === '__all' ? null : btn.dataset.tag;
+      applyFilter();
+    });
+  });
+
+  buildCards();
+  applyFilter();
+}
+
+function buildCards() {
+  const list = document.getElementById('blog-list');
+  list.innerHTML = '';
+  allPosts.forEach((post, i) => {
+    const card = document.createElement('div');
+    card.className = 'blog-card';
+    card.dataset.tags = JSON.stringify(post.tags || []);
+    card.innerHTML = `
+      <div class="blog-card-date">${post.date||''}</div>
+      <div class="blog-card-title">${post.title}</div>
+      <div class="blog-card-excerpt">${post.excerpt||''}</div>
+      <div class="blog-card-tags">${(post.tags||[]).map(t=>`<span class="blog-tag">${t}</span>`).join('')}</div>`;
+    card.addEventListener('click', () => openPost(post, card));
+    list.appendChild(card);
+    if (i === 0) openPost(post, card);
+  });
+}
+
+function applyFilter() {
+  const cards = document.querySelectorAll('.blog-card');
+  let firstVisible = null;
+  cards.forEach(card => {
+    const tags = JSON.parse(card.dataset.tags || '[]');
+    const show = !activeTag || tags.includes(activeTag);
+    card.classList.toggle('hidden', !show);
+    if (show && !firstVisible) firstVisible = card;
+  });
+  // if current active card is now hidden, open first visible
+  const active = document.querySelector('.blog-card.active');
+  if (active && active.classList.contains('hidden') && firstVisible) {
+    firstVisible.click();
+  } else if (!active && firstVisible) {
+    firstVisible.click();
+  }
+  // show empty state if nothing visible
+  const list = document.getElementById('blog-list');
+  let empty = list.querySelector('.blog-empty');
+  if (!firstVisible) {
+    if (!empty) { empty = document.createElement('div'); empty.className='blog-empty'; empty.textContent='NO POSTS WITH THIS TAG'; list.appendChild(empty); }
+  } else {
+    if (empty) empty.remove();
+  }
+}
+
+function openPost(post, cardEl) {
+  document.querySelectorAll('.blog-card').forEach(c=>c.classList.remove('active'));
+  cardEl.classList.add('active');
+  document.getElementById('blog-reader-placeholder').style.display='none';
+  document.getElementById('blog-reader-content').style.display='block';
+  document.getElementById('r-title').textContent = post.title;
+  document.getElementById('r-meta').textContent  = post.date + (post.tags?.length ? '  ·  '+post.tags.join(' / ') : '');
+  renderBody(post.body || '', document.getElementById('r-body'));
+}
+
+function renderSkills(skills) {
+  document.getElementById('skills-grid').innerHTML = skills.map(s=>
+    `<span class="skill-tag${s.highlight?' highlight':''}">${s.name}</span>`
+  ).join('');
+}
+
+function renderContact(links) {
+  document.getElementById('contact-grid').innerHTML = links.map(l=>
+    `<a href="${l.href}" class="contact-link" target="_blank" rel="noopener">
+      <span class="link-label">${l.label}</span>
+      <span class="link-value">${l.value}</span>
+    </a>`
+  ).join('');
+}
+
+function applyData(d) {
+  if (d.hire)     renderHire(d.hire);
+  if (d.about)    renderAbout(d.about);
+  if (d.stats)    renderStats(d.stats);
+  if (d.learning) renderLearning(d.learning);
+  if (d.projects) renderProjects(d.projects);
+  renderBlog(d.posts || []);
+  if (d.skills)   renderSkills(d.skills);
+  if (d.contact)  renderContact(d.contact);
+}
+
+fetch('data.json?v='+Date.now())
+  .then(r=>{if(!r.ok)throw new Error();return r.json();})
+  .then(applyData).catch(()=>applyData(DEFAULTS));
+
+// smooth scroll + nav highlight
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});});
+});
+const navLinks=document.querySelectorAll('nav a');
+new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(a=>a.classList.remove('active'));
+      document.querySelector(`nav a[href="#${entry.target.id}"]`)?.classList.add('active');
+    }
+  });
+},{threshold:0.3}).observe.call(
+  new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));document.querySelector(`nav a[href="#${entry.target.id}"]`)?.classList.add('active');}})},{threshold:0.3}),
+  ...document.querySelectorAll('section[id]')
+);
+// simpler nav observer
+const obs2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(a=>a.classList.remove('active'));document.querySelector(`nav a[href="#${e.target.id}"]`)?.classList.add('active');}});},{threshold:0.3});
+document.querySelectorAll('section[id]').forEach(s=>obs2.observe(s));
+</script>
+</body>
+</html>
