@@ -32,7 +32,11 @@
         }
     ],
     "learning": [
-        
+        {
+            "title": "TEAM MANAGEMENT",
+            "desc": "Learning how to better communicate with fields I'm not familiar in",
+            "pct": 100
+        }
     ],
     "projects": [
         {
