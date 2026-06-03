@@ -343,7 +343,9 @@ function renderProjects(projects) {
     <article class="card">
       <div class="card-glow"></div>
       ${p.wip?'<div class="badge-wip">WIP</div>':''}
-      <div class="card-thumb placeholder"><span>[ SCREENSHOT ]</span></div>
+      ${p.image
+          ? `<div class="card-thumb"><img src="${p.image}" alt="${p.title}"></div>`
+          : `<div class="card-thumb placeholder"><span>[ SCREENSHOT ]</span></div>`}
       <div class="card-body">
         <h3 class="card-title">${p.title}</h3>
         <p class="card-desc">${p.desc}</p>
