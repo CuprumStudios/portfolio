@@ -41,7 +41,6 @@
     "projects": [
         {
             "title": "Dears In Departing",
-            "image": "newCuprumLogo_640x.png",
             "desc": "The whole idea of this game was based around the whole theme of Possession and stuff like that after getting really into Deltarune. So the idea is that all of your friends are able to possess bodies and stuff, and each type of Host can have different stats and things like that, so some enemies could be hard to possess, or even lose health if your possession is too strong.\n\nThe souls can also provide upgrades to whatever host it is inhabiting, so you can explore more of the map.\nThe souls all start in one body, with one player being chosen at random to possess it, and if that body dies, and the souls can't find a replacement, then they all die, and the run is over.\n\nSome things on the map would require the body to only have 1 soul in it at a time, or even temporarily removing upgrades and stuff.\n\n",
             "tags": [
                 "CO-OP",
@@ -51,7 +50,8 @@
             ],
             "github": "",
             "itch": "",
-            "wip": true
+            "wip": true,
+            "image": ""
         },
         {
             "title": "Spaceship Game (NAME UNDECIDED)",
