@@ -34,7 +34,7 @@
     "learning": [
         {
             "title": "TEAM MANAGEMENT",
-            "desc": "Learning how to better communicate with fields I'm not familiar in",
+            "desc": "Learning how to better communicate with people in fields I'm not familiar in",
             "pct": 100
         }
     ],
@@ -46,7 +46,8 @@
                 "CO-OP",
                 "MULTIPLAYER",
                 "3D",
-                "ROGUELIKE"
+                "ROGUELIKE",
+                "HORROR"
             ],
             "github": "",
             "itch": "",
@@ -59,7 +60,8 @@
             "tags": [
                 "3D",
                 "LOGIC",
-                "SPACE"
+                "SPACE",
+                "HORROR"
             ],
             "github": "",
             "itch": "",
