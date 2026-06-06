@@ -52,7 +52,7 @@
             "github": "",
             "itch": "",
             "wip": true,
-            "image": ""
+            "image": "img/TAH-Header Capsule.png"
         },
         {
             "title": "Spaceship Game (NAME UNDECIDED)",
@@ -65,7 +65,8 @@
             ],
             "github": "",
             "itch": "",
-            "wip": true
+            "wip": true,
+            "image": "img/TAH-Header Capsule.png"
         },
         {
             "title": "Take A Hike",
@@ -77,7 +78,7 @@
             "github": "",
             "itch": "",
             "wip": true,
-            "image": "img/TAH-Header Capsule"
+            "image": "img/TAH-Header Capsule.png"
         },
         {
             "title": "DIVING GAME (NAMES UNDECIDED)",
@@ -94,7 +95,8 @@
             ],
             "github": "",
             "itch": "",
-            "wip": true
+            "wip": true,
+            "image": "img/TAH-Header Capsule.png"
         },
         {
             "title": "ULTRAKILL inspired Roguelike!",
@@ -108,7 +110,8 @@
             ],
             "github": "",
             "itch": "",
-            "wip": true
+            "wip": true,
+            "image": "img/TAH-Header Capsule.png"
         },
         {
             "title": "JUNIPER GAME JAM GAME",
@@ -119,7 +122,8 @@
             ],
             "github": "",
             "itch": "",
-            "wip": true
+            "wip": true,
+            "image": "img/TAH-Header Capsule.png"
         }
     ],
     "posts": [
