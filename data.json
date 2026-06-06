@@ -1,197 +1,212 @@
 {
-    "hire": {
-        "status": "open",
-        "text": "OPEN FOR HIRE & COLLAB"
+  "hire": {
+    "status": "open",
+    "text": "OPEN FOR HIRE & COLLAB"
+  },
+  "about": "Hey there, I'm a game developer with about 5 years of experience with a few different engines (Mainly Unity).\n\nI really like roguelikes hence why I've made a bunch, and really enjoy logic in items, puzzles, etc.\n\nI started my Game Dev journey in 7th grade, when one of my friends had a website where he made custom games for people to play in class, when they didn't want to do school work.\nHe introduced it to me, and I started making games for people, and I really really enjoyed what I did.\n\nEventually I started learning Unity after a family reunion with one of my cousins, where we had an idea to make a VR FNAF fangame.\nThe game never came out or got worked on much, but it still got me into Unity, which is where I still work.\n\nNow I make games with friends, and have a lot of fun doing so!",
+  "stats": [
+    {
+      "num": "5+",
+      "label": "YRS WITH UNITY",
+      "color": "blue"
     },
-    "about": "Hey there, I'm a game developer with about 5 years of experience with a few different engines (Mainly Unity).\n\nI really like roguelikes hence why I've made a bunch, and really enjoy logic in items, puzzles, etc.\n\nI started my Game Dev journey in 7th grade, when one of my friends had a website where he made custom games for people to play in class, when they didn't want to do school work.\nHe introduced it to me, and I started making games for people, and I really really enjoyed what I did.\n\nEventually I started learning Unity after a family reunion with one of my cousins, where we had an idea to make a VR FNAF fangame.\nThe game never came out or got worked on much, but it still got me into Unity, which is where I still work.\n\nNow I make games with friends, and have a lot of fun doing so!",
-    "stats": [
-        {
-            "num": "5+",
-            "label": "YRS WITH UNITY",
-            "color": "blue"
-        },
-        {
-            "num": "Too many",
-            "label": "PROJECTS STARTED",
-            "color": "blue"
-        },
-        {
-            "num": "3",
-            "label": "GAME JAMS",
-            "color": "orange"
-        },
-        {
-            "num": "C#",
-            "label": "PRIMARY LANG",
-            "color": "pink"
-        },
-        {
-            "num": "OPEN",
-            "label": "FOR HIRE",
-            "color": "green"
-        }
-    ],
-    "learning": [
-        {
-            "title": "TEAM MANAGEMENT",
-            "desc": "Learning how to better communicate with people in fields I'm not familiar in",
-            "pct": 100
-        }
-    ],
-    "projects": [
-        {
-            "title": "Dears In Departing",
-            "desc": "The whole idea of this game was based around the whole theme of Possession and stuff like that after getting really into Deltarune. So the idea is that all of your friends are able to possess bodies and stuff, and each type of Host can have different stats and things like that, so some enemies could be hard to possess, or even lose health if your possession is too strong.\n\nThe souls can also provide upgrades to whatever host it is inhabiting, so you can explore more of the map.\nThe souls all start in one body, with one player being chosen at random to possess it, and if that body dies, and the souls can't find a replacement, then they all die, and the run is over.\n\nSome things on the map would require the body to only have 1 soul in it at a time, or even temporarily removing upgrades and stuff.\n\n",
-            "tags": [
-                "CO-OP",
-                "MULTIPLAYER",
-                "3D",
-                "ROGUELIKE",
-                "HORROR"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        },
-        {
-            "title": "Spaceship Game (NAME UNDECIDED)",
-            "desc": "The idea was a short little horror game about keeping a spaceship alive for as long as you could, but the idea was that in your ship, you could basically rewire things to do what you wanted, so you could have your steering wheel control your airlock, etc, and all the base systems in your ship would be made of those basic components, like the Airlock would just be something like a button, an atmosphere detector, and then 2 doors, and then the logic would just tell it to only open the outer door if the atmosphere inside of the airlock was 0, and vice versa for the inside.",
-            "tags": [
-                "3D",
-                "LOGIC",
-                "SPACE",
-                "HORROR"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        },
-        {
-            "title": "Take A Hike",
-            "desc": "VR Climbing game that was originally going to be made for Steam Next Fest, but I procrastinated too much and didn't make the deadline. Maybe I'll come back to it, but I'd have to relearn a lot of VR development since it's been like 2 years.",
-            "tags": [
-                "VR",
-                "SPEEDRUNNING"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        },
-        {
-            "title": "DIVING GAME (NAMES UNDECIDED)",
-            "desc": "This was an idea I had a while ago, when I was learning how to Weld at my school, when I heard about Underwater Welding.\nThis idea was then split into 3 separate game ides, which are definitely special.\n\nThe 1st idea was a game similar to any Lethal Company-esque games, where you and some friends would go do an objective together while monsters attack you, but instead of going to different moons, it was Oil Rigs, and instead of collecting scrap, you were welding on the Oil Rig to earn money, the more accurate you were, the more money you'd make, yadda yadda yadda.\n\nThe 2nd idea was almost a 1:1 copy of Lethal company, but instead of moons, it was just underwater labs, and one of the ideas I had was to have an elevator that would take you from floor to floor, and let you do your job of activating generators and things like that. This one I don't think I'll make, unless I find a way to make it more unique than just \"Lethal Company, but Underwater\"\n\nThe 3rd idea which is the one I think I am actually gonna try to make, is an Asymmetrical Horror Roguelike, where when you complete the tasks, you earn money that lets you upgrade yourself as a survivor, or as a monster, and the goal is to just either complete objectives, or kill all the survivors.",
-            "tags": [
-                "UNITY",
-                "3D",
-                "MULTIPLAYER",
-                "ROGUELIKE",
-                "CO-OP",
-                "VERSUS",
-                "ASYMMETRICAL",
-                "HORROR"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        },
-        {
-            "title": "ULTRAKILL inspired Roguelike!",
-            "desc": "ULTRAKILL style combat, with items similar to games like The Binding Of Isaac, Ancient Dungeon VR, Risk of Rain 2, etc.\nMakes heavy use of Procedural Map Generation to make the maps Unique.",
-            "tags": [
-                "PROCEDURAL",
-                "UNITY",
-                "3D",
-                "FPS",
-                "ROGUELIKE"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        },
-        {
-            "title": "JUNIPER GAME JAM GAME",
-            "desc": "The jam hasn't started yet, but this will be a project soon.",
-            "tags": [
-                "UNITY",
-                "GAME JAM"
-            ],
-            "github": "",
-            "itch": "",
-            "wip": true,
-            "image": "img/TAH-Header Capsule.png"
-        }
-    ],
-    "posts": [
-        {
-            "id": "website-is-up",
-            "title": "Website is up.",
-            "date": "2026-06-03",
-            "tags": [],
-            "excerpt": "I got the website up!",
-            "body": "New website I plan on using as a portfolio."
-        }
-    ],
-    "skills": [
-        {
-            "name": "UNITY",
-            "highlight": true
-        },
-        {
-            "name": "C#",
-            "highlight": true
-        },
-        {
-            "name": "SCRIPTABLE OBJECTS",
-            "highlight": false
-        },
-        {
-            "name": "LEVEL DESIGN",
-            "highlight": false
-        },
-        {
-            "name": "GAME DESIGN",
-            "highlight": false
-        },
-        {
-            "name": "GIT",
-            "highlight": false
-        }
-    ],
-    "contact": [
-        {
-            "label": "EMAIL",
-            "value": "mindcraftkids1976@gmail.com ",
-            "href": "mailto:you@email.com"
-        },
-        {
-            "label": "GITHUB",
-            "value": "github.com/Speedy345YT",
-            "href": "https://github.com/Speedy345YT"
-        },
-        {
-            "label": "TWITTER",
-            "value": "@CuprumStudios",
-            "href": "https://twitter.com/CuprumStudios"
-        },
-        {
-            "label": "ITCH.IO",
-            "value": "cuprumstudios.itch.io",
-            "href": "https://cuprumstudios.itch.io"
-        },
-        {
-            "label": "CUPRUM STUDIOS DISCORD",
-            "value": "discord.com/invite/bMmH7MCywy",
-            "href": "https://discord.com/invite/bMmH7MCywy"
-        },
-        {
-            "label": "PERSONAL DISCORD",
-            "value": "Speedy345",
-            "href": ""
-        }
-    ]
+    {
+      "num": "Too many",
+      "label": "PROJECTS STARTED",
+      "color": "blue"
+    },
+    {
+      "num": "3",
+      "label": "GAME JAMS",
+      "color": "orange"
+    },
+    {
+      "num": "C#",
+      "label": "PRIMARY LANG",
+      "color": "pink"
+    },
+    {
+      "num": "OPEN",
+      "label": "FOR HIRE",
+      "color": "green"
+    }
+  ],
+  "learning": [
+    {
+      "title": "TEAM MANAGEMENT",
+      "desc": "Learning how to better communicate with people in fields I'm not familiar in",
+      "pct": 100
+    }
+  ],
+  "projects": [
+    {
+      "title": "UNNAMED CO-OP ROGUELIKE HORROR GAME",
+      "desc": "The idea is to have a game where you enter buildings with your friends, do objectives, and then as the difficulty increases, you are able to upgrade yourself with conditional items, rather than basic stat boosts like other games. ",
+      "tags": [
+        "CO-OP",
+        "MULTIPLAYER",
+        "ROGUELIKE",
+        "3D",
+        "HORROR"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "Dears In Departing",
+      "desc": "The whole idea of this game was based around the whole theme of Possession and stuff like that after getting really into Deltarune. So the idea is that all of your friends are able to possess bodies and stuff, and each type of Host can have different stats and things like that, so some enemies could be hard to possess, or even lose health if your possession is too strong.\n\nThe souls can also provide upgrades to whatever host it is inhabiting, so you can explore more of the map.\nThe souls all start in one body, with one player being chosen at random to possess it, and if that body dies, and the souls can't find a replacement, then they all die, and the run is over.\n\nSome things on the map would require the body to only have 1 soul in it at a time, or even temporarily removing upgrades and stuff.\n\n",
+      "tags": [
+        "CO-OP",
+        "MULTIPLAYER",
+        "3D",
+        "ROGUELIKE",
+        "HORROR"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "Spaceship Game (NAME UNDECIDED)",
+      "desc": "The idea was a short little horror game about keeping a spaceship alive for as long as you could, but the idea was that in your ship, you could basically rewire things to do what you wanted, so you could have your steering wheel control your airlock, etc, and all the base systems in your ship would be made of those basic components, like the Airlock would just be something like a button, an atmosphere detector, and then 2 doors, and then the logic would just tell it to only open the outer door if the atmosphere inside of the airlock was 0, and vice versa for the inside.",
+      "tags": [
+        "3D",
+        "LOGIC",
+        "SPACE",
+        "HORROR"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "Take A Hike",
+      "desc": "VR Climbing game that was originally going to be made for Steam Next Fest, but I procrastinated too much and didn't make the deadline. Maybe I'll come back to it, but I'd have to relearn a lot of VR development since it's been like 2 years.",
+      "tags": [
+        "VR",
+        "SPEEDRUNNING"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "DIVING GAME (NAMES UNDECIDED)",
+      "desc": "This was an idea I had a while ago, when I was learning how to Weld at my school, when I heard about Underwater Welding.\nThis idea was then split into 3 separate game ides, which are definitely special.\n\nThe 1st idea was a game similar to any Lethal Company-esque games, where you and some friends would go do an objective together while monsters attack you, but instead of going to different moons, it was Oil Rigs, and instead of collecting scrap, you were welding on the Oil Rig to earn money, the more accurate you were, the more money you'd make, yadda yadda yadda.\n\nThe 2nd idea was almost a 1:1 copy of Lethal company, but instead of moons, it was just underwater labs, and one of the ideas I had was to have an elevator that would take you from floor to floor, and let you do your job of activating generators and things like that. This one I don't think I'll make, unless I find a way to make it more unique than just \"Lethal Company, but Underwater\"\n\nThe 3rd idea which is the one I think I am actually gonna try to make, is an Asymmetrical Horror Roguelike, where when you complete the tasks, you earn money that lets you upgrade yourself as a survivor, or as a monster, and the goal is to just either complete objectives, or kill all the survivors.",
+      "tags": [
+        "UNITY",
+        "3D",
+        "MULTIPLAYER",
+        "ROGUELIKE",
+        "CO-OP",
+        "VERSUS",
+        "ASYMMETRICAL",
+        "HORROR"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "ULTRAKILL inspired Roguelike!",
+      "desc": "ULTRAKILL style combat, with items similar to games like The Binding Of Isaac, Ancient Dungeon VR, Risk of Rain 2, etc.\nMakes heavy use of Procedural Map Generation to make the maps Unique.",
+      "tags": [
+        "PROCEDURAL",
+        "UNITY",
+        "3D",
+        "FPS",
+        "ROGUELIKE"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    },
+    {
+      "title": "JUNIPER GAME JAM GAME",
+      "desc": "The jam hasn't started yet, but this will be a project soon.",
+      "tags": [
+        "UNITY",
+        "GAME JAM"
+      ],
+      "github": "",
+      "itch": "",
+      "wip": true,
+      "image": "img/TAH-Header Capsule.png"
+    }
+  ],
+  "posts": [
+    {
+      "id": "website-is-up",
+      "title": "Website is up.",
+      "date": "2026-06-03",
+      "tags": [],
+      "excerpt": "I got the website up!",
+      "body": "New website I plan on using as a portfolio."
+    }
+  ],
+  "skills": [
+    {
+      "name": "UNITY",
+      "highlight": true
+    },
+    {
+      "name": "C#",
+      "highlight": true
+    },
+    {
+      "name": "SCRIPTABLE OBJECTS",
+      "highlight": false
+    },
+    {
+      "name": "LEVEL DESIGN",
+      "highlight": false
+    },
+    {
+      "name": "GAME DESIGN",
+      "highlight": false
+    },
+    {
+      "name": "GIT",
+      "highlight": false
+    }
+  ],
+  "contact": [
+    {
+      "label": "EMAIL",
+      "value": "mindcraftkids1976@gmail.com ",
+      "href": "mailto:you@email.com"
+    },
+    {
+      "label": "GITHUB",
+      "value": "github.com/Speedy345YT",
+      "href": "https://github.com/Speedy345YT"
+    },
+    {
+      "label": "TWITTER",
+      "value": "@CuprumStudios",
+      "href": "https://twitter.com/CuprumStudios"
+    },
+    {
+      "label": "ITCH.IO",
+      "value": "cuprumstudios.itch.io",
+      "href": "https://cuprumstudios.itch.io"
+    },
+    {
+      "label": "CUPRUM STUDIOS DISCORD",
+      "value": "discord.com/invite/bMmH7MCywy",
+      "href": "https://discord.com/invite/bMmH7MCywy"
+    },
+    {
+      "label": "PERSONAL DISCORD",
+      "value": "Speedy345",
+      "href": ""
+    }
+  ]
 }
